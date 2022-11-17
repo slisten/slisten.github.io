@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 
-  <head>
-    {% include head.html %}
-  </head>
+  {% include head.html %}
 
-  <body>
-    <div class="site-container">
-      <header class="site-header">
-        {% include header.html %}
-      </header>
-      
-      <div class="site-body wrapper">
-        <aside class="site-sidebar" id="site-sidebar">
-          {% if page.toc %}
-            {% include sidebar-toc.html %}
-          {% else %}
-            {% include sidebar.html %}
-          {% endif %}
-        </aside>
-        <main class="site-main" id="site-main" aria-label="Content" tabindex="1">
-          {{ content }}
-          <footer class="site-footer">
-            {% include footer.html %}
-          </footer>
-        </main>
-      </div>
-    </div>
+  <body id="page-top">
+
+      {{ content }}
+
+	  {% include footer.html %}
+
+	  <!-- Bootstrap core JavaScript -->
+	  <script src="assets/js/jquery.min.js"></script>
+	  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	  <!-- Plugin JavaScript -->
+	  <script src="assets/js/jquery.easing.min.js"></script>
+
+	  <!-- Contact form JavaScript -->
+	  <script src="assets/js/jqBootstrapValidation.js"></script>
+	  <script src="assets/js/contact_me.js"></script>
+
+	  <!-- Custom scripts for this template -->
+	  <script src="assets/js/agency.min.js"></script>
+
   </body>
-
 </html>
